@@ -8,4 +8,8 @@ format:
 	go fmt .
 
 docker:
-	docker build . -t web-app:latest
+	docker build . -t docker-http-hello-world:latest
+
+docker-push:
+	docker tag docker-http-hello-world:latest pwithams/docker-http-hello-world:latest && \
+	docker push pwithams/docker-http-hello-world:latest
