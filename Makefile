@@ -1,3 +1,5 @@
+NEW_TAG = $(shell date +"%Y-%m-%d-%S")
+
 make:
 	go build -o bin/main main.go
 
@@ -11,5 +13,5 @@ docker:
 	docker build . -t docker-http-hello-world:latest
 
 docker-push:
-	docker tag docker-http-hello-world:latest pwithams/docker-http-hello-world:latest && \
-	docker push pwithams/docker-http-hello-world:latest
+	docker tag docker-http-hello-world:latest pwithams/docker-http-hello-world:$(NEW_TAG) && \
+	docker push pwithams/docker-http-hello-world:$(NEW_TAG)

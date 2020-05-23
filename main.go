@@ -21,7 +21,7 @@ func main() {
 func helloWorldRouter(writer http.ResponseWriter, request *http.Request) {
 	fmt.Println("Handling request to:", request.URL)
 	if request.URL.Path == "/" {
-		io.WriteString(writer, "Hello, world!\n")
+		io.WriteString(writer, "Hello, world!!\n")
 	} else {
 		fmt.Println("Path not supported")
 		writer.Header()
