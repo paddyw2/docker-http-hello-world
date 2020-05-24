@@ -1,4 +1,4 @@
-NEW_TAG = $(shell date +"%Y-%m-%d-%S")
+NEW_TAG = $(shell date +"%Y-%m-%d-%s")
 
 make:
 	go build -o bin/main main.go

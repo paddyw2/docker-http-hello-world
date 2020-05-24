@@ -11,6 +11,7 @@ import (
 )
 
 const PORT string = "8080"
+const VERSION string = "0.0.1"
 
 func main() {
 	http.HandleFunc("/", helloWorldRouter)
@@ -21,10 +22,11 @@ func main() {
 func helloWorldRouter(writer http.ResponseWriter, request *http.Request) {
 	fmt.Println("Handling request to:", request.URL)
 	if request.URL.Path == "/" {
-		io.WriteString(writer, "Hello, world!!!\n")
+        io.WriteString(writer, "Hello, world\nVersion: "+VERSION)
 	} else {
 		fmt.Println("Path not supported")
 		writer.Header()
 		writer.WriteHeader(http.StatusNotFound)
+		io.WriteString(writer, "404 - not found\n")
 	}
 }
